@@ -1,0 +1,73 @@
+:root{--bg:#f3eee3;--stage:#14264a;--stage2:#1d3566;--tile:#f6b72c;--tileink:#2a1c00;--ink:#1b2a4a;--muted:#5b6785;--card:#fff;--red:#d8392f;--green:#1f9d55;--line:#d9d2c0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;font-weight:600;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+main{max-width:960px;margin:0 auto;padding:14px}
+h1{font-family:'Bowlby One',Impact,sans-serif;font-weight:400;font-size:clamp(28px,6vw,44px);margin:6px 0 14px;letter-spacing:.5px}
+h2{font:800 18px Nunito,sans-serif;margin:0 0 10px}
+.hide{display:none!important}
+button:focus-visible,input:focus-visible{outline:3px solid var(--tile);outline-offset:2px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+input[type=text]{width:100%;padding:11px 12px;border-radius:9px;border:2px solid var(--line);background:#fff;color:var(--ink);font:700 16px Nunito,sans-serif;margin:4px 0 10px}
+label.l{font:800 13px Nunito,sans-serif;color:var(--muted)}
+.btn{font:800 15px Nunito,sans-serif;padding:11px 16px;border-radius:10px;border:0;cursor:pointer;background:var(--tile);color:var(--tileink)}
+.btn.dark{background:var(--stage);color:#fff}
+.btn.alt{background:rgba(255,255,255,.16);color:#fff}
+.btn.red{background:var(--red);color:#fff}
+.btn.green{background:var(--green);color:#fff}
+.btn.sm{padding:6px 10px;font-size:13px}
+.btn:disabled{opacity:.4;cursor:default}
+.err{color:var(--red);font-weight:800;min-height:1.4em;margin:4px 0}
+.teampick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 12px}
+.teampick label{border:2px solid var(--line);border-radius:10px;padding:10px;text-align:center;cursor:pointer;font-weight:800}
+.teampick label{position:relative}.teampick input{position:absolute;opacity:0;inset:0;cursor:pointer}.teampick input:focus-visible+span{outline:3px solid var(--tile);outline-offset:4px}
+.teampick input:checked+span{background:var(--stage);color:#fff;display:block;margin:-10px;padding:10px;border-radius:8px}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.code{font:400 26px 'Bowlby One',sans-serif;letter-spacing:4px;background:var(--stage);color:var(--tile);padding:4px 12px;border-radius:10px}
+.muted{color:var(--muted);font-size:14px}
+.stage{background:radial-gradient(ellipse at top,var(--stage2),var(--stage));border-radius:16px;padding:16px;color:#fff;margin-bottom:12px}
+.scores{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch;margin-bottom:12px}
+.team{background:rgba(255,255,255,.1);border-radius:12px;padding:8px 12px;text-align:center;border:3px solid transparent}
+.team.active{border-color:var(--tile);background:rgba(246,183,44,.18)}
+.team .tn{font:800 16px Nunito,sans-serif;overflow:hidden;text-overflow:ellipsis}
+.team b{display:block;font:400 38px 'Bowlby One',Impact,sans-serif;color:var(--tile)}
+.team small{color:#b9c4e2;font-size:12px}
+.pot{text-align:center;font-size:13px;align-self:center}.pot b{display:block;font:400 28px 'Bowlby One',sans-serif}
+.q{font:800 clamp(18px,3.5vw,26px) Nunito,sans-serif;text-align:center;margin:4px 0 12px;min-height:2.2em}
+.board{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.board{grid-template-columns:1fr}}
+.tile{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:54px;padding:0 14px;border-radius:10px;border:0;font:800 17px Nunito,sans-serif;color:#fff;background:#2a4a8f;box-shadow:inset 0 -4px 0 rgba(0,0,0,.25);text-align:left}
+.tile .n{font:400 20px 'Bowlby One',sans-serif;width:100%;text-align:center}
+.tile .p{font:400 20px 'Bowlby One',sans-serif}
+.tile.up{background:var(--tile);color:var(--tileink)}
+.tile.key{cursor:pointer;background:#24407d}
+.tile.key small{display:block;font-weight:600;font-size:11px;color:#9fb0d8}
+.tile.key:disabled{cursor:default;opacity:.85}
+.tile.key:not(:disabled):hover{background:#3558a8}
+.msg{background:rgba(255,255,255,.12);border-radius:10px;padding:10px 12px;text-align:center;font-weight:800;margin-top:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.buzzwrap{text-align:center;margin:16px 0}
+.buzzer{width:min(62vw,250px);height:min(62vw,250px);border-radius:50%;border:10px solid #7c1f19;background:#8a8f9c;color:#fff;font:400 clamp(18px,5.5vw,30px) 'Bowlby One',sans-serif;cursor:not-allowed;box-shadow:0 10px 0 #4f535c;padding:20px}
+.buzzer.armed{background:var(--red);cursor:pointer;animation:pulse 0.9s infinite;box-shadow:0 10px 0 #7c1f19}
+.buzzer.armed:active{transform:translateY(8px);box-shadow:0 2px 0 #7c1f19}
+.buzzer.won{background:var(--green);border-color:#115c32;box-shadow:0 10px 0 #115c32;cursor:default}
+.buzzer.lost{background:#555c6b}
+@keyframes pulse{50%{filter:brightness(1.25)}}
+@media(prefers-reduced-motion:reduce){.buzzer.armed{animation:none}}
+.roster{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.roster{grid-template-columns:1fr}}
+.pl{display:flex;justify-content:space-between;align-items:center;gap:6px;padding:6px 0;border-bottom:1px solid var(--line)}
+.pl .off{opacity:.45}
+.badge{background:var(--tile);color:var(--tileink);font:800 11px Nunito,sans-serif;padding:2px 7px;border-radius:99px;margin-left:6px}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{flex:1;font:800 15px Nunito,sans-serif;padding:11px;border:2px solid var(--stage);background:transparent;color:var(--ink);border-radius:10px;cursor:pointer}
+.tabs button.on{background:var(--stage);color:#fff}
+.wheelwrap{position:relative;width:min(100%,360px);margin:6px auto}
+.wheelwrap canvas{width:100%;height:auto;display:block}
+.ptr{position:absolute;top:-8px;left:50%;transform:translateX(-50%);border-left:14px solid transparent;border-right:14px solid transparent;border-top:30px solid #fff;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}
+.who{font:400 clamp(20px,5vw,30px) 'Bowlby One',sans-serif;text-align:center;margin:10px 0;min-height:1.3em;color:var(--tile)}
+textarea.names{width:min(100%,420px);display:block;margin:10px auto;padding:10px 12px;border-radius:8px;border:2px solid var(--line);font:600 15px Nunito,sans-serif}
+.conn{position:sticky;top:0;background:var(--red);color:#fff;text-align:center;padding:6px;font-weight:800;z-index:20}
+.toast{position:fixed;left:50%;top:70px;transform:translateX(-50%);background:var(--tile);color:var(--tileink);font:400 22px 'Bowlby One',sans-serif;padding:14px 22px;border-radius:14px;z-index:30;box-shadow:0 8px 24px rgba(0,0,0,.35);text-align:center;max-width:92vw}
+.mute{position:fixed;right:10px;bottom:10px;font:800 12px Nunito,sans-serif;padding:7px 10px;border-radius:99px;border:2px solid var(--stage);background:var(--card);color:var(--ink);cursor:pointer;z-index:10}
